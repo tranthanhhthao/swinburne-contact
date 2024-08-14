@@ -106,7 +106,7 @@ a {
     color: var(--bg-color);
     transform-origin: center;
 
-    animation: shake 1s infinite;
+    animation: shake 1.6s infinite;
     animation-play-state: running;
 }
 
@@ -139,6 +139,34 @@ a {
     color: var(--bg-color);
 }
 
+/* nav */
+
+nav {
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    right: 40px;
+}
+
+.circle {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 10;
+    border: 1px solid var(--black-main);
+
+    margin-bottom: 10px;
+
+    cursor: pointer;
+}
+
+.circle:hover {
+    background-color: var(--black-main);
+}
+
 /* page-contact */
 
 section.page-contact {
@@ -166,32 +194,31 @@ section.page-contact {
     display: block;
     height: 100%;
     width: 100%;
-    opacity: 0;
+    opacity: 1;
 
-    padding-top: 100px;
-    padding-bottom: 250px;
+    /* transform: rotate(-13deg); */
 
-    transform: rotate(-13deg)
+    scroll-snap-type: y mandatory ;
+    overflow-y: scroll !important;
+    height: 100vh;
+
 }
 
 .content h2 {
     position: relative;
     text-align: center;
     width: 60%;
-
-    margin: auto;
+    height: auto;
+    display: block;
 
     color: var(--black-main);
 
     font-weight: 500;
     font-size: 1.6rem;
 
-    transition: transform 3s ease;
-
-}
-
-.content h2:hover {
-    transform: translateX(10px)
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
 }
 
 .content a.myname {
@@ -204,26 +231,21 @@ section.page-contact {
     text-decoration: underline;
 }
 
-.content img {
+.content div img {
     width: 250px;
     position: relative;
     display: block;
-    margin: auto;
-    /* border-radius: 50%; */
-
-    margin-top: 1rem;
-    /* margin-bottom: 2rem; */
+    transform: rotate(0deg) translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
 }
 
-.content img:hover {
-    transform: rotate(-5deg);
+.content div img:hover {
+    transform: rotate(-5deg) translateX(-50%) translateY(-50%);
 }
 
 .content .link {
     margin: auto;
-
-    margin-top: 2rem;
-    margin-bottom: 5rem;
 
     position: relative;
     display: block;
@@ -233,7 +255,6 @@ section.page-contact {
     position: relative;
     display: block;
     width: fit-content;
-    margin: auto;
 
     background-color: var(--black-main);
     color: var(--yellow-first);
@@ -243,29 +264,42 @@ section.page-contact {
     text-decoration: none;
 
     font-size: 1.2rem;
-    margin-top: 0.6rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1.3rem;
+
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
 
 }
 
 .content .button:hover {
-    transform: rotate(-3deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-3deg);
 }
 
 
 .content .tooltip {
     position: relative;
     display: block;
-    width: 100%;
+    width: fit-content;
     text-align: center;
     font-size: 1.2rem;  
     text-transform: lowercase; 
-    margin-top: 0.3rem; 
     cursor: pointer;
+
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
 }
 
-.content .tooltip:hover {
-    text-decoration: underline;
+/* each page */
+
+.content div {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.first h2 {
+    top: 30%;
 }
 
 /* emoji rain */

@@ -2,17 +2,15 @@
 const introTl = gsap.timeline({defaults: {duration: 1, ease: 'power2.inOut'}});
 
 introTl
-  .to('.content', {
-    opacity: 1,
+  .to('.content div img', {
+    rotate: 360,
     duration: 3,
-    rotate: 0,
-    transformOrigin: 'top center',
-    ease: 'elastic.out(1, 0.3)' // Elastic ease with amplitude 1 and period 0.3
-
   })
-  .to('.content img', {
-    // rotate: 360,
-    duration: 3,
+  .to('.first h2', {
+    top: '35%',
+    opacity: 1,
+    duration: 1,
+    ease: 'bounce.out',
   }, '<')
 
 // img click
