@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    --bg-color: #fdfffc;
+
+    --gray-main: #bcbcbc;
+    --gray-second: #d6d6d6;
+    --gray-second-difference: #333333;
+
+    --black-main: #202124;
+    --black-second: #474747;
+    --black-second: #4D4D4D;
+
+    --raster-color: #f4f4f4;
+
+    --blue-first: #9eccd8;
+    --blue-second: #77aabc;
+
+    --yellow-first: #faee3b;
+}
+
+html, body {
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--black-main);
+    /* width: 100%; */
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+::-moz-selection { /* Code for Firefox */
+    background: var(--blue-first);
+    color: var(--black-main);
+  }
+  
+::selection {
+background: var(--blue-first);
+color: var(--black-main);
+}
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+a {
+    cursor: pointer;
+}
+
+.app {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+/* nav */
+.nav {
+    position: fixed;
+    display: block;
+
+    font-size: 1rem;
+
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
+
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+
+    text-decoration: none;
+    color: var(--black-main);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.projects {
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.email {
+    background-color: #000;
+    color: var(--bg-color);
+    transform-origin: center;
+
+    animation: shake 1s infinite;
+    animation-play-state: running;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-50%) rotate(0);
+    }
+    25% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(0);
+    }
+}
+
+.email:hover {
+    background-color: var(--bg-color) !important;
+    color: var(--black-main) !important;
+    animation-play-state: paused;
+}
+
+.nav:hover {
+    background-color: var(--gray-second-difference);
+    color: var(--bg-color);
+}
+
+/* page-contact */
+
+section.page-contact {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--yellow-first);
+    z-index: 5;
+}
+
+.exit {
+    position: fixed;
+    display: block;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+}
+
+/* page-contact content */
+
+.content {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    padding-top: 100px;
+}
+
+.content h2 {
+    position: relative;
+    text-align: center;
+    width: 60%;
+
+    margin: auto;
+
+    color: var(--black-main);
+
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.content a.myname {
+    text-decoration: none;
+    color: var(--black-main);
+    font-weight: 700;
+}
+
+.content a.myname:hover {
+    text-decoration: underline;
+}
+
+.content img {
+    width: 250px;
+    position: relative;
+    display: block;
+    margin: auto;
+    /* border-radius: 50%; */
+
+    margin-top: 1rem;
+    /* margin-bottom: 2rem; */
+
+}
+
+.content .link {
+    margin: auto;
+
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    position: relative;
+    display: block;
+}
+
+.content .button {
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: auto;
+
+    background-color: var(--black-main);
+    color: var(--yellow-first);
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+
+    text-decoration: none;
+
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
+}
+
+.content .tooltip {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;  
+    text-transform: lowercase; 
+    margin-top: 0.3rem; 
+    cursor: pointer;
+}
+
+/* raster-bg */
+.raster-bg {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+
+    z-index: -1;
+}
+
+.raster-v-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.raster-line-v {
+    position: relative;
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background-color: var(--raster-color);
+    margin-left: calc(6.66666vw - 1px);
+    margin-right: 0;
+}
+
+.raster-h-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+}
+
+.raster-line-h {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--raster-color);
+    margin-top: calc(6.66666vw - 1px);
+}
+
+.raster-h-1 {
+    animation: raster-running 10s linear infinite;
+}
+
+@keyframes raster-running {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -50%);
+    }
+}
+
+/* emoji rain */
+
+.rain {
+    position: absolute;
+    display: block;    
+}
+
+.school {
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    gap: 1rem;
+
+    width: 260px;
+    height: 100px;
+    background-color: #4cdf58;
+    color: var(--black-main);
+    border-radius: 25px;
+
+    -webkit-animation-name: emojis-fall, emojis-shake;
+    -webkit-animation-duration: 7s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: emojis-fall, emojis-shake;
+    animation-duration: 7s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+
+    bottom: -10%;
+    left: 60%;
+    animation-delay: .5s, .5s;
+
+    z-index: 1000;
+}
+
+.school:hover {
+    animation-play-state: paused;
+    rotate: -10deg;
+}
+
+.school img {
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+    position: relative;
+    display: block;
+}
+
+.school svg {
+    position: absolute;
+    display: block;
+
+    right: 30px;
+    bottom: 18px;
+}
+
+.rain span {
+    position: relative;
+    display: block;
+
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.1rem;
+    color: var(--black-main);
+    margin-top: 25px;
+}
+
+.emoji img {
+    width: 70px;
+}
+
+.emoji:hover img{
+    rotate: -10deg;
+}
+
+@keyframes emojis-fall {
+    0% {
+      bottom: -10%;
+    }
+    100% {
+      bottom: 100%;
+    }
+}
+
+@keyframes emojis-shake {
+    0% {
+      transform: translateX(0px);
+    }
+    25% {
+      transform: translateX(10px);
+    }
+    50% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+}
+
+.emoji {
+    position: fixed;
+    bottom: -10%;
+    z-index: 999;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+
+    -webkit-animation-name: emojis-fall, emojis-shake;
+    -webkit-animation-duration: 5s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: emojis-fall, emojis-shake;
+    animation-duration: 5s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+.emoji:nth-of-type(1) {
+    left: 20%;
+}
+
+.emoji:nth-of-type(2) {
+    left: 30%;
+    animation-delay: 3s, 3s;
+}
+
+.emoji:nth-of-type(3) {
+    left: 85%;
+    animation-delay: 1s, 1s;
+}
+
+@keyframes breathing {
+    0% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+
+
+
