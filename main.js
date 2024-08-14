@@ -37,3 +37,46 @@ function copyText() {
 }
 
 button.addEventListener('click', copyText);
+
+// track 
+const content = document.querySelector('.content');
+const circles = document.querySelectorAll('.circle');
+
+function getCurrentSection() {
+  const sections = gsap.utils.toArray('.link'); // Get all the sections on the page
+  const currentPosition = content.scrollTop; // Get the current scroll position
+  // console.log(currentPosition);
+
+  let currentSection = null;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop; // Get the top position of each section
+    const sectionHeight = section.offsetHeight; // Get the height of each section
+    const sectionBottom = sectionTop + sectionHeight; // Calculate the bottom position of each section
+
+    if (currentPosition >= sectionTop && currentPosition < sectionBottom) {
+      currentSection = section;
+    }
+  });
+
+  return currentSection;
+}
+
+content.addEventListener('scroll', () => {
+  const currentSection = getCurrentSection();
+  // console.log(currentSection); // Print the ID of the current section
+
+  if (currentSection.id == 'first') {
+    circles[0].style.backgroundColor = '#000';
+    circles[1].style.backgroundColor = 'transparent';
+    circles[2].style.backgroundColor = 'transparent';
+  } else if (currentSection.id == 'contact-email') {
+    circles[0].style.backgroundColor = 'transparent';
+    circles[1].style.backgroundColor = '#000';
+    circles[2].style.backgroundColor = 'transparent';
+  } else if (currentSection.id == 'contact-linktree') {
+    circles[0].style.backgroundColor = 'transparent';
+    circles[1].style.backgroundColor = 'transparent';
+    circles[2].style.backgroundColor = '#000';
+  }
+});

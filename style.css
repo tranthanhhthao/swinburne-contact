@@ -163,6 +163,10 @@ nav {
     cursor: pointer;
 }
 
+.circle:nth-child(1){
+    background-color: #000;
+}
+
 .circle:hover {
     background-color: var(--black-main);
 }
@@ -246,7 +250,7 @@ section.page-contact {
 
 .content .link {
     margin: auto;
-
+    height: 100vh;
     position: relative;
     display: block;
 }
