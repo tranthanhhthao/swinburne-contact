@@ -34,6 +34,7 @@ html, body {
 body {
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: var(--yellow-first);
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -66,6 +67,11 @@ a {
     left: 0;
     height: 100%;
 }
+
+.mask {
+    overflow: hidden;
+}
+
 /* nav */
 .nav {
     position: fixed;
@@ -139,7 +145,7 @@ section.page-contact {
     position: relative;
     display: block;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 
     background-color: var(--yellow-first);
     z-index: 5;
@@ -158,9 +164,14 @@ section.page-contact {
 .content {
     position: relative;
     display: block;
+    height: 100%;
     width: 100%;
+    opacity: 0;
 
     padding-top: 100px;
+    padding-bottom: 250px;
+
+    transform: rotate(-13deg)
 }
 
 .content h2 {
@@ -174,6 +185,13 @@ section.page-contact {
 
     font-weight: 500;
     font-size: 1.6rem;
+
+    transition: transform 3s ease;
+
+}
+
+.content h2:hover {
+    transform: translateX(10px)
 }
 
 .content a.myname {
@@ -195,7 +213,10 @@ section.page-contact {
 
     margin-top: 1rem;
     /* margin-bottom: 2rem; */
+}
 
+.content img:hover {
+    transform: rotate(-5deg);
 }
 
 .content .link {
@@ -223,7 +244,14 @@ section.page-contact {
 
     font-size: 1.2rem;
     margin-top: 0.6rem;
+    margin-bottom: 0.5rem;
+
 }
+
+.content .button:hover {
+    transform: rotate(-3deg);
+}
+
 
 .content .tooltip {
     position: relative;
@@ -236,69 +264,8 @@ section.page-contact {
     cursor: pointer;
 }
 
-/* raster-bg */
-.raster-bg {
-    position: fixed;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-
-    z-index: -1;
-}
-
-.raster-v-container {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.raster-line-v {
-    position: relative;
-    display: inline-block;
-    width: 1px;
-    height: 100%;
-    background-color: var(--raster-color);
-    margin-left: calc(6.66666vw - 1px);
-    margin-right: 0;
-}
-
-.raster-h-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-}
-
-.raster-line-h {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: var(--raster-color);
-    margin-top: calc(6.66666vw - 1px);
-}
-
-.raster-h-1 {
-    animation: raster-running 10s linear infinite;
-}
-
-@keyframes raster-running {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(0, -50%);
-    }
+.content .tooltip:hover {
+    text-decoration: underline;
 }
 
 /* emoji rain */
@@ -307,60 +274,6 @@ section.page-contact {
     position: absolute;
     display: block;    
 }
-
-.school {
-    position: fixed;
-    display: none;
-    flex-direction: row;
-    gap: 1rem;
-
-    width: 260px;
-    height: 100px;
-    background-color: #4cdf58;
-    color: var(--black-main);
-    border-radius: 25px;
-
-    -webkit-animation-name: emojis-fall, emojis-shake;
-    -webkit-animation-duration: 7s, 3s;
-    -webkit-animation-timing-function: linear, ease-in-out;
-    -webkit-animation-iteration-count: infinite, infinite;
-    -webkit-animation-play-state: running, running;
-    animation-name: emojis-fall, emojis-shake;
-    animation-duration: 7s, 3s;
-    animation-timing-function: linear, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-play-state: running, running;
-
-    bottom: -10%;
-    left: 60%;
-    animation-delay: .5s, .5s;
-
-    z-index: 1000;
-}
-
-.school:hover {
-    animation-play-state: paused;
-    rotate: -10deg;
-}
-
-.school img {
-    width: 70px;
-    height: 70px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 20px;
-    position: relative;
-    display: block;
-}
-
-.school svg {
-    position: absolute;
-    display: block;
-
-    right: 30px;
-    bottom: 18px;
-}
-
 .rain span {
     position: relative;
     display: block;
@@ -433,12 +346,12 @@ section.page-contact {
 }
 
 .emoji:nth-of-type(2) {
-    left: 30%;
+    left: 40%;
     animation-delay: 3s, 3s;
 }
 
 .emoji:nth-of-type(3) {
-    left: 85%;
+    left: 75%;
     animation-delay: 1s, 1s;
 }
 
