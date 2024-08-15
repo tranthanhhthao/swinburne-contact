@@ -1,18 +1,17 @@
 // intro
 const introTl = gsap.timeline({defaults: {duration: 1, ease: 'power2.inOut'}});
-
-introTl
-  .to('.content div img', {
-    rotate: 360,
-    duration: 3,
-  })
-  .to('.first h2', {
-    top: '35%',
-    opacity: 1,
-    duration: 1,
-    ease: 'bounce.out',
-  }, '<')
-
+  introTl
+    .to(['.first h2', '.first img'], {
+      yPercent: 0,
+      top: '40%',
+      opacity: 1,
+      stagger: 0.5,
+      ease: 'bounce.out',
+      duration: 1.5,
+    })
+    .to('.first img', {
+      rotate: '+=360',
+    }, '<')
 // img click
 const img = document.querySelector('.content img');
 
@@ -38,7 +37,7 @@ function copyText() {
 
 button.addEventListener('click', copyText);
 
-// track 
+// track sections
 const content = document.querySelector('.content');
 const circles = document.querySelectorAll('.circle');
 
@@ -53,6 +52,7 @@ function getCurrentSection() {
     const sectionTop = section.offsetTop; // Get the top position of each section
     const sectionHeight = section.offsetHeight; // Get the height of each section
     const sectionBottom = sectionTop + sectionHeight; // Calculate the bottom position of each section
+    console.log(currentPosition, sectionTop + "-" + sectionBottom)
 
     if (currentPosition >= sectionTop && currentPosition < sectionBottom) {
       currentSection = section;

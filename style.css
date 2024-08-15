@@ -186,8 +186,8 @@ section.page-contact {
 .exit {
     position: fixed;
     display: block;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 20px;
     z-index: 999;
 }
 
@@ -195,7 +195,10 @@ section.page-contact {
 
 .content {
     position: relative;
-    display: block;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
     height: 100%;
     width: 100%;
     opacity: 1;
@@ -213,16 +216,11 @@ section.page-contact {
     text-align: center;
     width: 60%;
     height: auto;
-    display: block;
 
     color: var(--black-main);
 
     font-weight: 500;
     font-size: 1.6rem;
-
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
 }
 
 .content a.myname {
@@ -239,13 +237,6 @@ section.page-contact {
     width: 250px;
     position: relative;
     display: block;
-    transform: rotate(0deg) translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
-}
-
-.content div img:hover {
-    transform: rotate(-5deg) translateX(-50%) translateY(-50%);
 }
 
 .content .link {
@@ -269,15 +260,10 @@ section.page-contact {
 
     font-size: 1.2rem;
     margin-top: 1.3rem;
-
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
-
 }
 
 .content .button:hover {
-    transform: translateX(-50%) translateY(-50%) rotate(-3deg);
+    transform: rotate(-3deg) translateY(-50%);
 }
 
 
@@ -289,21 +275,22 @@ section.page-contact {
     font-size: 1.2rem;  
     text-transform: lowercase; 
     cursor: pointer;
-
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
 }
 
 /* each page */
 
 .content div {
-    height: 100vh;
     scroll-snap-align: start;
 }
 
+.content .link * {
+    margin: 0 auto;
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
 .first h2 {
-    top: 30%;
+    opacity: 0;
 }
 
 /* emoji rain */
@@ -405,6 +392,17 @@ section.page-contact {
     }
 }
 
+/* responsiveeee */
+@media screen and (max-width: 480px) {
+    nav {
+        right: 20px;
+    }
+    
+}
 
-
-
+@media screen and (max-width: 768px) {
+    nav {
+        right: 20px;
+    }
+    
+}
