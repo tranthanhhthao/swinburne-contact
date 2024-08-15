@@ -293,6 +293,10 @@ section.page-contact {
     opacity: 0;
 }
 
+.first h2, .first img {
+    top: 35% !important;
+}
+
 /* emoji rain */
 
 .rain {
@@ -393,16 +397,20 @@ section.page-contact {
 }
 
 /* responsiveeee */
-@media screen and (max-width: 480px) {
-    nav {
-        right: 20px;
-    }
-    
-}
-
 @media screen and (max-width: 768px) {
     nav {
         right: 20px;
     }
-    
+    .first h2, .first img {
+        top: 28% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        right: 20px;
+    }
+    .first h2, .first img {
+        top: 28% !important;
+    }
 }
