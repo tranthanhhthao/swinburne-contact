@@ -54,7 +54,7 @@ function getCurrentSection() {
     const sectionBottom = sectionTop + sectionHeight; // Calculate the bottom position of each section
     console.log(currentPosition, sectionTop + "-" + sectionBottom)
 
-    if (currentPosition >= sectionTop && currentPosition < sectionBottom) {
+    if (currentPosition >= sectionTop-1 && currentPosition < sectionBottom) {
       currentSection = section;
     }
   });
