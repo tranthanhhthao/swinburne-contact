@@ -290,11 +290,28 @@ section.page-contact {
 }
 
 .first h2 {
-    opacity: 0;
+    opacity: 1;
 }
 
 .first h2, .first img {
     top: 35% !important;
+}
+
+.first img {
+    animation: slightShake 3s infinite;
+    animation-play-state: running;
+}
+
+@keyframes slightShake {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
 }
 
 /* emoji rain */

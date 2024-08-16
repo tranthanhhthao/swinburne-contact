@@ -1,26 +1,6 @@
-// intro
-const introTl = gsap.timeline({defaults: {duration: 1, ease: 'power2.inOut'}});
-  introTl
-    .to(['.first h2', '.first img'], {
-      yPercent: 0,
-      top: '40%',
-      opacity: 1,
-      stagger: 0.5,
-      ease: 'bounce.out',
-      duration: 1.5,
-    })
-    .to('.first img', {
-      rotate: '+=360',
-    }, '<')
-// img click
-const img = document.querySelector('.content img');
+// intro animation
 
-img.addEventListener('click', () => {
-  gsap.to(img, {
-    rotate: '+=360',
-  })
-})
-  
+
 // copyText
 const button = document.getElementById('copy-address');
 
@@ -52,7 +32,7 @@ function getCurrentSection() {
     const sectionTop = section.offsetTop; // Get the top position of each section
     const sectionHeight = section.offsetHeight; // Get the height of each section
     const sectionBottom = sectionTop + sectionHeight; // Calculate the bottom position of each section
-    console.log(currentPosition, sectionTop + "-" + sectionBottom)
+    // console.log(currentPosition, sectionTop + "-" + sectionBottom)
 
     if (currentPosition >= sectionTop-1 && currentPosition < sectionBottom) {
       currentSection = section;
