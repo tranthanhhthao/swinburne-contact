@@ -6,10 +6,14 @@ ScrollTrigger.defaults({
   scroller: '.content'
 });
 
-gsap.from('.first h2', {
+gsap.set('.first h2', {
+  y: 80,
+})
+
+gsap.to('.first h2', {
   scrollTrigger: '.first',
   duration: 1,
-  y: 80,
+  y: 0,
 })
 
 gsap.from(['.contact-email h2', '.contact-email .button'], {
