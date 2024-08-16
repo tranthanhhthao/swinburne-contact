@@ -1,5 +1,28 @@
 // intro animation
+gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.defaults({
+  toggleActions: 'restart pause restart pause',
+  scroller: '.content'
+});
+
+gsap.from('.first h2', {
+  scrollTrigger: '.first',
+  duration: 1,
+  y: 100,
+})
+
+gsap.from(['.contact-email h2', '.contact-email .button'], {
+  scrollTrigger: '.contact-email',
+  duration: 1,
+  y: 100,
+})
+
+gsap.from(['.contact-linktree h2', '.contact-linktree .button'], {
+  scrollTrigger: '.contact-linktree',
+  duration: 1,
+  y: 100,
+})
 
 // copyText
 const button = document.getElementById('copy-address');
@@ -24,7 +47,6 @@ const circles = document.querySelectorAll('.circle');
 function getCurrentSection() {
   const sections = gsap.utils.toArray('.link'); // Get all the sections on the page
   const currentPosition = content.scrollTop; // Get the current scroll position
-  // console.log(currentPosition);
 
   let currentSection = null;
 
@@ -50,6 +72,7 @@ content.addEventListener('scroll', () => {
     circles[0].style.backgroundColor = '#000';
     circles[1].style.backgroundColor = 'transparent';
     circles[2].style.backgroundColor = 'transparent';
+
   } else if (currentSection.id == 'contact-email') {
     circles[0].style.backgroundColor = 'transparent';
     circles[1].style.backgroundColor = '#000';
