@@ -418,8 +418,12 @@ section.page-contact {
     nav {
         right: 20px;
     }
-    .first h2, .first img {
-        top: 28% !important;
+    .first h2{
+        top: 35% !important;
+    }
+
+    .first img {
+        top: 25% !important;
     }
 }
 
@@ -427,7 +431,11 @@ section.page-contact {
     nav {
         right: 20px;
     }
-    .first h2, .first img {
+    .first h2{
+        top: 35% !important;
+    }
+
+    .first img {
         top: 22% !important;
     }
 }

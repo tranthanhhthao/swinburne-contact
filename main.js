@@ -9,7 +9,7 @@ ScrollTrigger.defaults({
 gsap.from('.first h2', {
   scrollTrigger: '.first',
   duration: 1,
-  y: 100,
+  y: 80,
 })
 
 gsap.from(['.contact-email h2', '.contact-email .button'], {
