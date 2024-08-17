@@ -251,6 +251,7 @@ section.page-contact {
     width: 100%;
     position: relative;
     display: block;
+    margin: auto;
 
     scroll-snap-align: start;
 }
