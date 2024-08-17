@@ -21,7 +21,8 @@
     --blue-first: #9eccd8;
     --blue-second: #77aabc;
 
-    --yellow-first: #faee3b;
+    --yellow-first: #f9e63d;
+    --blue-bg: #3cdeef;
 }
 
 html, body {
@@ -425,6 +426,9 @@ section.page-contact {
     .first img {
         top: 25% !important;
     }
+    .emoji {
+        bottom: -20%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -438,4 +442,5 @@ section.page-contact {
     .first img {
         top: 22% !important;
     }
+    
 }
