@@ -424,12 +424,18 @@ section.page-contact {
     nav {
         right: 20px;
     }
-    .first h2{
-        top: 35% !important;
+    .content h2{
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .first h2 {
+        top: 28% !important;
     }
 
     .first img {
-        top: 25% !important;
+        top: 30% !important;
+        width: 200px !important;
     }
     .emoji {
         bottom: -20%;
@@ -440,12 +446,21 @@ section.page-contact {
     nav {
         right: 20px;
     }
-    .first h2{
-        top: 35% !important;
+    .content h2{
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .first h2 {
+        top: 20% !important;
     }
 
     .first img {
-        top: 22% !important;
+        top: 23% !important;
+        width: 170px !important;
+    }
+    .emoji {
+        bottom: -20%;
     }
     
 }
