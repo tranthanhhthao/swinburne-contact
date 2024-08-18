@@ -7,13 +7,14 @@ ScrollTrigger.defaults({
 });
 
 gsap.set('.first h2', {
-  y: 80,
+  opacity: 1,
 })
 
-gsap.to('.first h2', {
+gsap.from('.first h2', {
   scrollTrigger: '.first',
+  opacity: 0,
   duration: 1,
-  y: 0,
+  y: 30,
 })
 
 gsap.from(['.contact-email h2', '.contact-email .button'], {
