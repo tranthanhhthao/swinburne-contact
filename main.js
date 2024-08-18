@@ -7,7 +7,7 @@ ScrollTrigger.defaults({
 });
 
 gsap.set('.first h2', {
-  opacity: 1,
+  autoAlpha: 1,
 })
 
 gsap.from('.first h2', {
@@ -88,3 +88,32 @@ content.addEventListener('scroll', () => {
     circles[2].style.backgroundColor = '#000';
   }
 });
+
+// preloader
+const buttonProjects = document.getElementById('click-projects');
+
+const preloaderTl = gsap.timeline({ defaults: { ease: "power1.out", duration: 0.4 } });
+
+function delayToLink(URL) {
+    setTimeout(() => {
+        window.location.href = URL;
+    }, 2500)
+}
+
+buttonProjects.addEventListener('click', () => {
+  gsap.set('.preload', {
+      y: '100%',
+      backgroundColor: getComputedStyle(document.body).getPropertyValue('--blue-bg'),
+  })
+
+  preloaderTl
+      .to('.preload', {
+          y: '0%',
+          duration: 2,
+          display: 'block',
+          ease: 'elastic.out(1, 0.5)',
+          delay: 0.3,
+      })
+  
+  delayToLink('https://tranthanhhthao.github.io/swinburne-projects/')
+});    

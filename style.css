@@ -140,6 +140,18 @@ a {
     color: var(--bg-color);
 }
 
+/* preload */
+
+section.preload {
+    position: fixed;
+    display: none;
+
+    height: 100vh;
+    width: 100vw;
+
+    z-index: 2000;
+}
+
 /* nav */
 
 nav {
