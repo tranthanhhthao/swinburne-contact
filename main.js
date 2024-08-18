@@ -14,7 +14,7 @@ gsap.from('.first h2', {
   scrollTrigger: '.first',
   opacity: 0,
   duration: 1,
-  y: 30,
+  y: 100,
 })
 
 gsap.from(['.contact-email h2', '.contact-email .button'], {
