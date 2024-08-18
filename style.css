@@ -426,12 +426,12 @@ section.page-contact {
         font-weight: 400;
     }
 
-    .first h2 {
+    /* .first h2 {
         top: 28% !important;
-    }
+    } */
 
     .first img {
-        top: 30% !important;
+        /* top: 30% !important; */
         width: 200px !important;
     }
     .emoji {
