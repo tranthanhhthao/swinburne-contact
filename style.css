@@ -218,6 +218,8 @@ section.page-contact {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
+
+    overflow-x: hidden;
 }
 
 .content h2 {
@@ -246,7 +248,7 @@ section.page-contact {
 }
 
 .content a.myname:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .content .link { 
