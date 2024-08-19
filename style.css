@@ -178,7 +178,7 @@ nav {
 }
 
 .circle:nth-child(1){
-    background-color: #000;
+    /* background-color: #000; */
 }
 
 .circle:hover {
@@ -308,14 +308,16 @@ section.page-contact {
 
 /* each page */
 
-/* .first h2, .first img {
-    top: 35% !important;
-} */
-
 .first img {
     animation: slightShake 3s infinite;
     animation-play-state: running;
 }
+
+.first h2, .first img {
+    visibility: hidden;
+}
+
+
 
 @keyframes slightShake {
     0% {
