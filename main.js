@@ -133,6 +133,44 @@ buttonProjects.addEventListener('click', () => {
   delayToLink('https://tranthanhhthao.github.io/swinburne-projects/')
 });    
 
+// button magneto
+const btnWrapper = document.querySelector('.button-wrapper:nth-of-type(2)');
+
+// mouse move 
+function activateMagneto(event, wrapper, element) {
+    let boundBox = element.getBoundingClientRect();
+    let boundBoxWrapper = wrapper.getBoundingClientRect();
+    const magnetoStrength = 55;
+
+    const newX = ((event.clientX - boundBoxWrapper.left)/(boundBoxWrapper.width) - 0.5)
+    const newY = ((event.clientY - boundBoxWrapper.top)/(boundBoxWrapper.height) - 0.5)                    
+
+    gsap.to(element, {
+        x: newX * magnetoStrength,
+        y: newY * magnetoStrength,
+        duration: 0.2,
+        ease: 'power1.inOut'
+    });   
+                   
+}
+
+// mouse leave 
+function resetMagneto(event, wrapper, element) {
+    gsap.to(element, {
+        x: 0,
+        y: 0,
+        duration: 2,
+        ease: 'elastic.out(1, 0.3)'
+    });
+}
+
+btnWrapper.addEventListener('mousemove', (event) => {
+    activateMagneto(event, btnWrapper, btnWrapper.querySelector('.nav'));
+})
+btnWrapper.addEventListener('mouseleave', (event) => {
+    resetMagneto(event, btnWrapper, btnWrapper.querySelector('.nav'));
+})
+
 // Parallax
 const sections = gsap.utils.toArray('.link');
 
