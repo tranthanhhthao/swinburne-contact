@@ -131,6 +131,12 @@ buttonProjects.addEventListener('click', () => {
       })
   
   delayToLink('https://tranthanhhthao.github.io/swinburne-projects/')
+
+  preloaderTl
+    .to('.preload', {
+        display: 'none',
+  })
+  
 });    
 
 // button magneto
